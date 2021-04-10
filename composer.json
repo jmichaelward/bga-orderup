@@ -9,5 +9,10 @@
     ],
     "require-dev": {
         "dholmes/bga-workbench": "^0.1.6"
+    },
+    "scripts": {
+        "bgawb": "./vendor/bin/bgawb",
+        "build": "@bgawb build --deploy",
+        "watch": "@bgawb build --deploy --watch"
     }
 }
