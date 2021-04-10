@@ -47,6 +47,15 @@
 
 */
 
+
+/**
+ * Possible ideas for stats to track:
+ *
+ * - Total tables with positive/neutral/negative effects.
+ * - 2vp/5vp/8vp tables.
+ */
+
+
 $stats_type = [
 
     // Statistics global to table
