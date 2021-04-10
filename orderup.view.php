@@ -24,16 +24,16 @@
  *
  */
 
-require_once(APP_BASE_PATH . "view/common/game.view.php");
+require_once(APP_BASE_PATH . 'view/common/game.view.php');
 
 class view_orderup_orderup extends game_view
 {
-    function getGameName()
+    public function getGameName()
     {
-        return "orderup";
+        return 'orderup';
     }
 
-    function build_page($viewArgs)
+    public function build_page($viewArgs)
     {
         // Get players & players number
         $players     = $this->game->loadPlayersBasicInfos();

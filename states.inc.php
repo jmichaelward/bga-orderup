@@ -53,22 +53,22 @@
 $machinestates = [
     // The initial state. Please do not modify.
     1 => [
-        "name"        => "gameSetup",
-        "description" => "",
-        "type"        => "manager",
-        "action"      => "stGameSetup",
-        "transitions" => ["" => 2],
+        'name'        => 'gameSetup',
+        'description' => '',
+        'type'        => 'manager',
+        'action'      => 'stGameSetup',
+        'transitions' => ['' => 2],
     ],
 
     // Note: ID=2 => your first state
 
     2  => [
-        "name"              => "playerTurn",
-        "description"       => clienttranslate('${actplayer} must play a card or pass'),
-        "descriptionmyturn" => clienttranslate('${you} must play a card or pass'),
-        "type"              => "activeplayer",
-        "possibleactions"   => ["playCard", "pass"],
-        "transitions"       => ["playCard" => 2, "pass" => 2],
+        'name'              => 'playerTurn',
+        'description'       => clienttranslate('${actplayer} must play a card or pass'),
+        'descriptionmyturn' => clienttranslate('${you} must play a card or pass'),
+        'type'              => 'activeplayer',
+        'possibleactions'   => ['playCard', 'pass'],
+        'transitions'       => ['playCard' => 2, 'pass' => 2],
     ],
 
     /*
@@ -97,11 +97,11 @@ $machinestates = [
     // Final state.
     // Please do not modify (and do not overload action/args methods).
     99 => [
-        "name"        => "gameEnd",
-        "description" => clienttranslate("End of game"),
-        "type"        => "manager",
-        "action"      => "stGameEnd",
-        "args"        => "argGameEnd",
+        'name'        => 'gameEnd',
+        'description' => clienttranslate('End of game'),
+        'type'        => 'manager',
+        'action'      => 'stGameEnd',
+        'args'        => 'argGameEnd',
     ],
 ];
 

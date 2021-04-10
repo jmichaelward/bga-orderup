@@ -50,12 +50,12 @@
 $stats_type = [
 
     // Statistics global to table
-    "table"  => [
+    'table' => [
 
-        "turns_number" => [
-            "id"   => 10,
-            "name" => totranslate("Number of turns"),
-            "type" => "int",
+        'turns_number' => [
+            'id'   => 10,
+            'name' => totranslate('Number of turns'),
+            'type' => 'int',
         ],
 
         /*
@@ -73,12 +73,12 @@ $stats_type = [
     ],
 
     // Statistics existing for each player
-    "player" => [
+    'player' => [
 
-        "turns_number" => [
-            "id"   => 10,
-            "name" => totranslate("Number of turns"),
-            "type" => "int",
+        'turns_number' => [
+            'id'   => 10,
+            'name' => totranslate('Number of turns'),
+            'type' => 'int',
         ],
 
         /*

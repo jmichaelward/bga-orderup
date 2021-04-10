@@ -22,7 +22,7 @@ require_once(APP_GAMEMODULE_PATH . 'module/table/table.game.php');
 
 class OrderUp extends Table
 {
-    function __construct()
+    public function __construct()
     {
         // Your global variables labels:
         //  Here, you can assign labels to global variables you are using for this game.
@@ -45,7 +45,7 @@ class OrderUp extends Table
     protected function getGameName()
     {
         // Used for translations and stuff. Please do not modify.
-        return "orderup";
+        return 'orderup';
     }
 
     /*
@@ -65,7 +65,7 @@ class OrderUp extends Table
 
         // Create players
         // Note: if you added some extra field on "player" table in the database (dbmodel.sql), you can initialize it there.
-        $sql    = "INSERT INTO player (player_id, player_color, player_canal, player_name, player_avatar) VALUES ";
+        $sql    = 'INSERT INTO player (player_id, player_color, player_canal, player_name, player_avatar) VALUES ';
         $values = [];
         foreach ($players as $player_id => $player) {
             $color    = array_shift($default_colors);
@@ -112,7 +112,7 @@ class OrderUp extends Table
 
         // Get information about players
         // Note: you can retrieve some extra field you added for "player" table in "dbmodel.sql" if you need it.
-        $sql               = "SELECT player_id id, player_score score FROM player ";
+        $sql               = 'SELECT player_id id, player_score score FROM player ';
         $result['players'] = self::getCollectionFromDb($sql);
 
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
@@ -130,7 +130,7 @@ class OrderUp extends Table
         This method is called each time we are in a game state with the "updateGameProgression" property set to true
         (see states.inc.php)
     */
-    function getGameProgression()
+    public function getGameProgression()
     {
         // TODO: compute and return the game progression
 
@@ -249,28 +249,28 @@ class OrderUp extends Table
         you must _never_ use getCurrentPlayerId() or getCurrentPlayerName(), otherwise it will fail with a "Not logged" error message.
     */
 
-    function zombieTurn($state, $active_player)
+    public function zombieTurn($state, $active_player)
     {
         $statename = $state['name'];
 
-        if ($state['type'] === "activeplayer") {
+        if ($state['type'] === 'activeplayer') {
             switch ($statename) {
                 default:
-                    $this->gamestate->nextState("zombiePass");
+                    $this->gamestate->nextState('zombiePass');
                     break;
             }
 
             return;
         }
 
-        if ($state['type'] === "multipleactiveplayer") {
+        if ($state['type'] === 'multipleactiveplayer') {
             // Make sure player is in a non blocking status for role turn
             $this->gamestate->setPlayerNonMultiactive($active_player, '');
 
             return;
         }
 
-        throw new feException("Zombie mode not supported at this game state: " . $statename);
+        throw new feException('Zombie mode not supported at this game state: ' . $statename);
     }
 
 ///////////////////////////////////////////////////////////////////////////////////:
@@ -288,7 +288,7 @@ class OrderUp extends Table
 
     */
 
-    function upgradeTableDb($from_version)
+    public function upgradeTableDb($from_version)
     {
         // $from_version is the current version of this game database, in numerical form.
         // For example, if the game was running with a release of your game named "140430-1345",

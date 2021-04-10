@@ -28,11 +28,11 @@ class action_orderup extends APP_GameAction
     public function __default()
     {
         if (self::isArg('notifwindow')) {
-            $this->view              = "common_notifwindow";
-            $this->viewArgs['table'] = self::getArg("table", AT_posint, true);
+            $this->view              = 'common_notifwindow';
+            $this->viewArgs['table'] = self::getArg('table', AT_posint, true);
         } else {
-            $this->view = "orderup_orderup";
-            self::trace("Complete reinitialization of board game");
+            $this->view = 'orderup_orderup';
+            self::trace('Complete reinitialization of board game');
         }
     }
 
