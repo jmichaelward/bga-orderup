@@ -11,7 +11,7 @@
 
 $gameinfos = [
     // Name of the game in English (will serve as the basis for translation)
-    'game_name'                            => "My Great Game",
+    'game_name'                            => 'Order Up',
 
     // Game designer (or game designers, separated by commas)
     'designer'                             => 'Ryan Harris',
