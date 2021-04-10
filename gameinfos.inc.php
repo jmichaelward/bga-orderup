@@ -128,9 +128,9 @@ $gameinfos = [
     // Each paragraph must be wrapped with totranslate() for translation and should not contain html (plain text without formatting).
     // A good length for this text is between 100 and 150 words (about 6 to 9 lines on a standard display)
     'presentation'                         => [
-    //    totranslate("This wonderful game is about geometric shapes!"),
-    //    totranslate("It was awarded best triangle game of the year in 2005 and nominated for the Spiel des Jahres."),
-    //    ...
+        //    totranslate("This wonderful game is about geometric shapes!"),
+        //    totranslate("It was awarded best triangle game of the year in 2005 and nominated for the Spiel des Jahres."),
+        //    ...
     ],
 
     // Games categories
@@ -150,5 +150,5 @@ $gameinfos = [
     // complex : A+B+C plays and says that the next player is A+B
     'is_sandbox'                           => false,
     'turnControl'                          => 'simple'
-////////
+    ////////
 ];
