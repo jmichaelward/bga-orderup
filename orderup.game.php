@@ -18,7 +18,7 @@
 
 
 require_once(APP_GAMEMODULE_PATH . 'module/table/table.game.php');
-
+require_once(__DIR__ . '/modules/material.php');
 
 class OrderUp extends Table
 {

@@ -19,6 +19,8 @@
  *
  */
 
+use JMichaelWard\OrderUp\Cube;
+
 
 /*
 
@@ -33,5 +35,17 @@ $this->card_types = array(
 */
 
 
+$this->cubes = [
+    new Cube(clienttranslate('Beverage'), 'yellow', 40),
+    new Cube(clienttranslate('Appetizer'), 'green', 30),
+    new Cube(clienttranslate('Entree'), 'red', 35),
+    new Cube(clienttranslate('Dessert'), 'white', 30),
+    new Cube(clienttranslate('Mess Up'), 'black', 30),
+];
 
-
+//$this->tableCards         = [];
+//$this->actionCards        = [];
+//$this->specialActionCards = [];
+//$this->upsellTokens       = [];
+//$this->complaintTokens    = [];
+//$this->shotGlass          = [];
