@@ -1,0 +1,13 @@
+{
+    "name": "jmichaelward/orderup",
+    "description": "A Board Game Arena implementation of Order Up by Ryan Harris.",
+    "authors": [
+        {
+            "name": "Jeremy Ward",
+            "email": "jeremy@jmichaelward.com"
+        }
+    ],
+    "require-dev": {
+        "dholmes/bga-workbench": "^0.1.6"
+    }
+}
