@@ -63,13 +63,102 @@ class Cube {
     }
 }
 
+/**
+ * Abstract representation of the cards in Order Up.
+ *
+ * @package JMichaelWard\OrderUp
+ */
 abstract class Card {
-    private $name;
-    private $id;
+    /**
+     * Numeric ID of the card.
+     *
+     * @var int
+     */
+    protected $id;
+
+    /**
+     * The name of the card.
+     *
+     * @var string
+     */
+    protected $name;
 }
 
-class TableCard extends Card {
+/**
+ * Model for the table cards in Order Up.
+ *
+ * @package JMichaelWard\OrderUp
+ */
+class TableCard extends Card
+{
+    /**
+     * The type of card: one of Positive, Negative, or Neutral.
+     *
+     * @var string
+     */
+    private $type;
 
+    /**
+     * The table card description.
+     *
+     * @var string
+     */
+    private $description = '';
+
+    /**
+     * The amount of VP the card is worth if its orders are fulfilled.
+     *
+     * @var int
+     */
+    private $vp;
+
+    /**
+     * The orders for the table.
+     * e.g., 1 Appetizer, 0 Entrees, 1 Dessert, 0 Cocktails.
+     *
+     * @var object
+     */
+    private $orders;
+
+    /**
+     * There are three types of upsells:
+     * - Desserts
+     * - Appetizers
+     * - Cocktails
+     *
+     * Each upsell on a card grants the card 1 extra VP.
+     *
+     * @var object
+     */
+    private $upsells;
+
+    /**
+     * Model of the table card.
+     *
+     * @param int         $id          ID of the card.
+     * @param string      $name        Name of the card.
+     * @param int         $vp          Potential VP the card is worth
+     * @param object      $orders      Orders required to complete the card.
+     * @param string      $description Optional flavor text.
+     * @param object|null $upsells     Optional upsells.
+     */
+    public function __construct(
+        int $id,
+        string $type,
+        string $name,
+        int $vp,
+        object $orders,
+        string $description = '',
+        object $upsells = null
+    ) {
+        $this->id          = $id;
+        $this->type        = $type;
+        $this->name        = $name;
+        $this->vp          = $vp;
+        $this->orders      = $orders;
+        $this->description = $description;
+        $this->upsells     = $upsells;
+    }
 }
 
 class ActionCard extends Card {
