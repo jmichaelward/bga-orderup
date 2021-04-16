@@ -267,6 +267,32 @@ class ActionCard extends Card {
     }
 }
 
+/**
+ * Class SpecialActionCard
+ * @package JMichaelWard\OrderUp
+ */
 class SpecialActionCard extends Card {
+    /**
+     * @var int
+     */
+    private $quantity;
 
+    /**
+     * @var int
+     */
+    private $vp;
+
+    /**
+     * SpecialActionCard constructor.
+     * @param int    $id
+     * @param string $name
+     * @param int    $quantity
+     * @param int    $vp
+     */
+    public function __construct(int $id, string $name, int $quantity, int $vp)
+    {
+        parent::__construct($id, $name);
+        $this->quantity = $quantity;
+        $this->vp = $vp;
+    }
 }
