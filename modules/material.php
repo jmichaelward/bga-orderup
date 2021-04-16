@@ -173,7 +173,98 @@ class TableCard extends Card
 }
 
 class ActionCard extends Card {
+    public const MOD_TAKE_CUBE_FROM_BAG = 1;
+    public const MOD_TAKE_TWO_CUBES_FROM_BAG = 2;
+    public const MOD_SAME_TRAY = 3;
+    public const MOD_PLAY_ACTION_CARD = 4;
+    public const MOD_DRAW_TWO_ACTION_CARDS = 5;
 
+    /**
+     * Total number of this card available in the game.
+     *
+     * @var int
+     */
+    private $quantity;
+
+    /**
+     * What set of cards this card is in.
+     *
+     * One of: Base Set, Mess-ups.
+     *
+     * @var string
+     */
+    private $version;
+
+    /**
+     * One of: Chef, Bartender, Busboy, Manager
+     *
+     * @var string
+     */
+    private $suit;
+
+    /**
+     * Required orders for this action.
+     *
+     * The card has two slots for order requirements. Values can be one of the following:
+     * Beverage (Drink), Appetizer, Dessert, Entree, Mess-up, AnyCourse
+     *
+     * @var array
+     */
+    private $required_orders;
+
+    /**
+     * How this action modifies the gameplay.
+     *
+     * @var string
+     */
+    private $modification;
+
+    /**
+     * Card text.
+     *
+     * @var string
+     */
+    private $text;
+
+    /**
+     * Amount of VP this action is worth.
+     *
+     * @var int
+     */
+    private $vp;
+
+    /**
+     * ActionCard constructor.
+     * @param int      $id ID of the card.
+     * @param string   $name
+     * @param int      $quantity
+     * @param string   $version
+     * @param string   $suit
+     * @param array    $required_orders
+     * @param int|null $modification
+     * @param string   $text
+     * @param int      $vp
+     */
+    public function __construct(
+        int $id,
+        string $name,
+        int $quantity,
+        string $version,
+        string $suit,
+        array $required_orders,
+        int $modification = null,
+        string $text = '',
+        int $vp = 0
+    ) {
+        parent::__construct($id, $name);
+        $this->quantity        = $quantity;
+        $this->version         = $version;
+        $this->suit            = $suit;
+        $this->required_orders = $required_orders;
+        $this->modification    = $modification;
+        $this->text            = $text;
+        $this->vp              = $vp;
+    }
 }
 
 class SpecialActionCard extends Card {
