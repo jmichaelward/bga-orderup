@@ -82,6 +82,18 @@ abstract class Card {
      * @var string
      */
     protected $name;
+
+    /**
+     * Card constructor.
+     *
+     * @param int    $id The card ID.
+     * @param string $name The card name.
+     */
+    public function __construct( int $id, string $name )
+    {
+        $this->id = $id;
+        $this->name = $name;
+    }
 }
 
 /**
@@ -144,16 +156,15 @@ class TableCard extends Card
      */
     public function __construct(
         int $id,
-        string $type,
         string $name,
+        string $type,
         int $vp,
         object $orders,
         string $description = '',
         object $upsells = null
     ) {
-        $this->id          = $id;
+        parent::__construct( $id, $name );
         $this->type        = $type;
-        $this->name        = $name;
         $this->vp          = $vp;
         $this->orders      = $orders;
         $this->description = $description;
